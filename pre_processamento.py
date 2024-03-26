@@ -11,7 +11,7 @@ nltk.download('stopwords')
 stopwords_pt = set(stopwords.words('portuguese'))
 
 # adicionando outras stopwords
-minhas_stopwords = {}
+minhas_stopwords = {'ne','so'}
 stopwords_pt.update(minhas_stopwords)
 
 def preprocess_text(text):
