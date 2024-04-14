@@ -25,7 +25,7 @@ def merge_csv_files(folder_path):
     return combined_df
 
 # Pasta contendo os arquivos CSV
-folder_path = 'C:/Users/adm/Desktop/codigo_tcc/exports/JULHO'
+folder_path = 'exports'
 
 # Chama a função para combinar os arquivos CSV
 merged_df = merge_csv_files(folder_path)
@@ -35,4 +35,4 @@ if merged_df is not None:
     print("DataFrame combinado:")
     print(merged_df)
     # Você pode salvar o DataFrame combinado em um novo arquivo CSV, se desejar
-    merged_df.to_csv('combined_data.csv', index=False)
+    merged_df.to_csv('combined_data/combined_data.csv', index=False)
