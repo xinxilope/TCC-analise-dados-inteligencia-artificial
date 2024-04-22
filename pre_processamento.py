@@ -21,7 +21,17 @@ minhas_stopwords = {"voce",
                     "pra",
                     "pro",
                     "vai",
-                    "so"}
+                    "so",
+                    "vc",
+                    "ter",
+                    "to",
+                    "vou",
+                    "sei",
+                    "ate",
+                    "fazer",
+                    "tava",
+                    "ver",
+                    "aqui"}
 stopwords_pt.update(minhas_stopwords)
 
 def preprocess_text(text):
