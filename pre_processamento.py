@@ -31,7 +31,8 @@ minhas_stopwords = {"voce",
                     "fazer",
                     "tava",
                     "ver",
-                    "aqui"}
+                    "aqui",
+                    "sao"}
 stopwords_pt.update(minhas_stopwords)
 
 def preprocess_text(text):
