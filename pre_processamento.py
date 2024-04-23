@@ -70,6 +70,7 @@ combined_df['text'] = combined_df['text'].apply(preprocess_text)
 
 # Remove duplicados com base na coluna 'url'
 combined_df.drop_duplicates(subset=['url'], inplace=True)
+combined_df.drop_duplicates(subset=['text'], inplace=True)
 
 # Remove linhas com texto vazio
 combined_df = combined_df[combined_df['text'] != '']
