@@ -11,13 +11,13 @@ nltk.download('stopwords')
 stopwords_pt = set(stopwords.words('portuguese'))
 
 # adicionando outras stopwords
-minhas_stopwords = {"voce",
-                    "so",
-                    "ta",
-                    "pq",
-                    "ja",
-                    "vo",
-                    "nao",
+minhas_stopwords = {"voce", "sim",
+                    "so", "puta", 
+                    "ta", "porra",
+                    "pq", "caralho",
+                    "ja", "merda",
+                    "vo", "bosta",
+                    "nao", "tao",
                     "pra",
                     "pro",
                     "vai",
@@ -32,7 +32,8 @@ minhas_stopwords = {"voce",
                     "tava",
                     "ver",
                     "aqui",
-                    "sao"}
+                    "sao",
+                    "faz"}
 stopwords_pt.update(minhas_stopwords)
 
 def preprocess_text(text):
