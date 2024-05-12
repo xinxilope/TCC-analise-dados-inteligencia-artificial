@@ -11,7 +11,29 @@ nltk.download('stopwords')
 stopwords_pt = set(stopwords.words('portuguese'))
 
 # adicionando outras stopwords
-minhas_stopwords = {'ne','so'}
+minhas_stopwords = {"voce", "sim",
+                    "so", "puta", 
+                    "ta", "porra",
+                    "pq", "caralho",
+                    "ja", "merda",
+                    "vo", "bosta",
+                    "nao", "tao",
+                    "pra",
+                    "pro",
+                    "vai",
+                    "so",
+                    "vc",
+                    "ter",
+                    "to",
+                    "vou",
+                    "sei",
+                    "ate",
+                    "fazer",
+                    "tava",
+                    "ver",
+                    "aqui",
+                    "sao",
+                    "faz"}
 stopwords_pt.update(minhas_stopwords)
 
 def preprocess_text(text):
@@ -49,6 +71,7 @@ combined_df['text'] = combined_df['text'].apply(preprocess_text)
 
 # Remove duplicados com base na coluna 'url'
 combined_df.drop_duplicates(subset=['url'], inplace=True)
+combined_df.drop_duplicates(subset=['text'], inplace=True)
 
 # Remove linhas com texto vazio
 combined_df = combined_df[combined_df['text'] != '']
