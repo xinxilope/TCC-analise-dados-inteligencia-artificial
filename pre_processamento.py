@@ -12,25 +12,25 @@ stopwords_pt = set(stopwords.words('portuguese'))
 
 # adicionando outras stopwords
 minhas_stopwords = {"voce", "sim",
-                    "so", "puta", 
-                    "ta", "porra",
-                    "pq", "caralho",
-                    "ja", "merda",
-                    "vo", "bosta",
+                    "puta", 
+                    "porra",
+                    "caralho",
+                    "merda",
+                    "bosta",
                     "nao", "tao",
-                    "pra",
+                    "pra", "chatgpt",
                     "pro",
                     "vai",
-                    "so",
-                    "vc",
-                    "ter",
-                    "to",
-                    "vou",
-                    "sei",
-                    "ate",
-                    "fazer",
-                    "tava",
-                    "ver",
+                    "bing",
+                    "copilot",
+                    "ter", "gemini",
+                    "inteligencia",
+                    "vou", "artificial",
+                    "sei", "openai",
+                    "ate", "rede",
+                    "fazer", "neural",
+                    "tava", "machine",
+                    "ver", "learning",
                     "aqui",
                     "sao",
                     "faz"}
@@ -58,8 +58,8 @@ def preprocess_text(text):
     # Remove pontuações
     text = re.sub('[%s]' % re.escape(string.punctuation), '', text)
     
-    # Remove stopwords em português
-    text = ' '.join([word for word in text.split() if word.lower() not in stopwords_pt])
+    # Remove stopwords em português e palavras com 2 ou menos caracteres
+    text = ' '.join([word for word in text.split() if word.lower() not in stopwords_pt and len(word) > 2])
 
     return text
 
@@ -75,6 +75,9 @@ combined_df.drop_duplicates(subset=['text'], inplace=True)
 
 # Remove linhas com texto vazio
 combined_df = combined_df[combined_df['text'] != '']
+
+# Remove tweets com 2 ou menos palavras
+combined_df = combined_df[combined_df['text'].apply(lambda x: len(x.split()) > 2)]
 
 # Salva o DataFrame pré-processado em um novo arquivo CSV
 combined_df.to_csv('exports/preprocessed_data/preprocessed_data_julho.csv', index=False)
