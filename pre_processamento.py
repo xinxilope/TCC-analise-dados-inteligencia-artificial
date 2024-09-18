@@ -12,28 +12,28 @@ stopwords_pt = set(stopwords.words('portuguese'))
 
 # adicionando outras stopwords
 minhas_stopwords = {"voce", "sim",
-                    "puta", 
-                    "porra",
-                    "caralho",
-                    "merda",
-                    "bosta",
+                    "puta", "fodase"
+                    "porra", "sobre",
+                    "caralho", "gpt",
+                    "merda", "cara",
+                    "bosta", "dia",
                     "nao", "tao",
                     "pra", "chatgpt",
-                    "pro",
-                    "vai",
-                    "bing",
-                    "copilot",
+                    "pro", "tudo",
+                    "vai", "pode",
+                    "bing", "machine",
+                    "copilot", "learning",
                     "ter", "gemini",
                     "inteligencia",
                     "vou", "artificial",
                     "sei", "openai",
                     "ate", "rede",
                     "fazer", "neural",
-                    "tava", "machine",
-                    "ver", "learning",
-                    "aqui",
-                    "sao",
-                    "faz"}
+                    "tava", "acho",
+                    "ver", "ainda",
+                    "aqui", "assim",
+                    "sao", "nada",
+                    "faz", "gente"}
 stopwords_pt.update(minhas_stopwords)
 
 def preprocess_text(text):
