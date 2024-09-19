@@ -64,7 +64,7 @@ def preprocess_text(text):
     return text
 
 # Carrega o DataFrame combinado
-combined_df = pd.read_csv('exports/combined_data_julho.csv')
+combined_df = pd.read_csv('exports/combined_data_dezembro.csv')
 
 # Executa o pre processamento
 combined_df['text'] = combined_df['text'].apply(preprocess_text)
@@ -80,7 +80,7 @@ combined_df = combined_df[combined_df['text'] != '']
 combined_df = combined_df[combined_df['text'].apply(lambda x: len(x.split()) > 2)]
 
 # Salva o DataFrame pré-processado em um novo arquivo CSV
-combined_df.to_csv('exports/preprocessed_data/preprocessed_data_julho.csv', index=False)
+combined_df.to_csv('exports/preprocessed_data/preprocessed_data_dezembro.csv', index=False)
 
 # Exibe o DataFrame pré-processado
 print("DataFrame pré-processado:")

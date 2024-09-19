@@ -1,10 +1,10 @@
 import pandas as pd
 
 # Ler o arquivo CSV
-df = pd.read_csv('exports/preprocessed_data/preprocessed_data_julho.csv')
+df = pd.read_csv('exports/preprocessed_data/preprocessed_data_dezembro.csv')
 
 # Abrir o arquivo TXT para escrita
-with open('exports/converted_data/data_julho.txt', 'w') as f:
+with open('exports/converted_data/data_dezembro.txt', 'w') as f:
     # Iterar sobre cada linha do DataFrame
     for _, row in df.iterrows():
         # Obter o texto da coluna 'text'
